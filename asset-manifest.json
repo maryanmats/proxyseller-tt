@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/proxyseller-tt/static/css/main.e6c13ad2.css",
+    "main.js": "/proxyseller-tt/static/js/main.674be38b.js",
+    "index.html": "/proxyseller-tt/index.html",
+    "main.e6c13ad2.css.map": "/proxyseller-tt/static/css/main.e6c13ad2.css.map",
+    "main.674be38b.js.map": "/proxyseller-tt/static/js/main.674be38b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.674be38b.js"
+  ]
+}
