@@ -1,9 +1,9 @@
 import React from 'react';
-import { Home } from './pages/Home/Home';
+import { Home } from './pages/Home';
 import { Routes, Route } from 'react-router-dom';
-import { AppContainer } from './components/AppContainer/AppContainer';
-import { PostsDialog } from './components/PostsTable/PostsTable';
-import { AlbumsTable } from './components/AlbumsTable/AlbumsTable';
+import { AppContainer } from './components/AppContainer';
+import { PostsDialog } from './components/PostsTable';
+import { AlbumsTable } from './components/AlbumsTable';
 
 function App() {
   return (

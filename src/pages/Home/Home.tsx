@@ -2,27 +2,29 @@ import React, { useState, useEffect } from 'react';
 import TableContainer from '@mui/material/TableContainer';
 import Paper from '@mui/material/Paper';
 import { User } from '../../types/types';
-import TextField from '@mui/material/TextField';
-import { PostsDialog } from '../../components/PostsTable/PostsTable';
-import { AlbumsTable } from '../../components/AlbumsTable/AlbumsTable';
+import { PostsDialog } from '../../components/PostsTable';
+import { AlbumsTable } from '../../components/AlbumsTable';
 import { useNavigate } from 'react-router-dom';
-import { UsersTable } from '../../components/UsersTable/UsersTable';
-import { SearchInput } from '../../components/SearchInput/SearchInput';
+import { UsersTable } from '../../components/UsersTable';
+import { SearchInput } from '../../components/SearchInput';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import { fetchData } from '../../utils/fetchData';
 
 export const Home: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [openModalPosts, setOpenModalPosts] = useState(false);
   const [openModalAlbums, setOpenModalAlbums] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState('all'); // Початкове значення 'all'
+  const [sortBy, setSortBy] = useState('all');
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(json => setUsers(json))
+    fetchData('https://jsonplaceholder.typicode.com/users')
+      .then((json) => setUsers(json))
+      .catch((error) => {
+        console.log(error);
+      });
   }, [])
 
   const handleOpenPosts = (userId: number) => {
